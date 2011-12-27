@@ -6,16 +6,15 @@ use base 'SWISH::Filters::Base';
 
 =head1 NAME
 
-SWISH::Filters::ImageTypesToXml
+SWISH::Filters::ImageTypesToXml - A filter that applies Imager::ImageTypes to index
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
-
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -25,6 +24,25 @@ This filter also accepts incoming XML as long as there is a base64 image data.
 If an XML file is passed into the filter it will look for the "b64_data" tag.
 If the xml contains this tag it will process the image that is stored in
 base64 format.
+
+=head1 DEZI CONFIGURATION
+
+Within the dezi configuration there are paremters that can be passed into the
+user meta data of this filter.
+
+    { 
+        engine_config => {
+            ...
+        },
+        image_types_config => {
+            generate_histogram  => 1
+        }
+    }
+
+=head2 generate_histogram(1|0)
+
+This will either dump the colors of the histogram or not. It is off by
+default.
 
 =head1 METHODS
 
@@ -125,9 +143,6 @@ Logan Bell, C<< <loganbell at gmail.com> >>
 Please report any bugs or feature requests to C<bug-swish-filters-imagetypestoxml at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=SWISH-Filters-ImageTypesToXml>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
-
 
 =head1 SUPPORT
 
