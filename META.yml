@@ -22,8 +22,9 @@ no_index:
 requires:
   Mime::Base64: 0
   SWISH::Filter::MIMETypes: 0
+  SWISH::Filters: 0
   Search::OpenSearch::Engine::Lucy: 0.06
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/logie17/SWISH-Filters-ImageTypesToXml.git
-version: 0.04
+version: 0.05
